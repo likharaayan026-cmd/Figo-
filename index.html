@@ -840,7 +840,7 @@
                     const expiry = Date.now() + (28 * 24 * 60 * 60 * 1000); // 28 Days Exact
                     database.ref('users/' + currentUser.uid + '/subscription').set({
                         paymentId: res.razorpay_payment_id,
-                        amount: 19,
+                        amount: 1,
                         active: true,
                         subscribedAt: Date.now(),
                         expiryDate: expiry
