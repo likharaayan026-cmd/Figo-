@@ -21,9 +21,10 @@
             --text-primary: #e5e5e5;
             --text-secondary: #999;
             --accent: #e50914;
-            --border: #404040;
-            --shadow: rgba(0, 0, 0, 0.5);
+            --border: #333333;
+            --shadow: rgba(0, 0, 0, 0.6);
             --gold: #ffd700;
+            --green: #2ecc71;
         }
 
         body {
@@ -31,7 +32,7 @@
             background: var(--bg-primary);
             color: var(--text-primary);
             overflow-x: hidden;
-            padding-bottom: 80px;
+            padding-bottom: 75px;
         }
 
         /* Splash Screen */
@@ -41,7 +42,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+            background: #0a0a0a;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -50,7 +51,7 @@
         }
 
         .splash-logo {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 800;
             color: var(--accent);
             display: flex;
@@ -60,12 +61,12 @@
 
         .spinner {
             margin-top: 25px;
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(255, 255, 255, 0.1);
+            width: 38px;
+            height: 38px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
             border-top-color: var(--accent);
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 0.8s linear infinite;
         }
 
         @keyframes spin {
@@ -89,11 +90,12 @@
 
         .auth-container {
             width: 100%;
-            max-width: 400px;
+            max-width: 380px;
             background: var(--bg-secondary);
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 16px;
+            padding: 22px;
             border: 1px solid var(--border);
+            box-shadow: 0 10px 30px var(--shadow);
         }
 
         .auth-header {
@@ -102,14 +104,14 @@
         }
 
         .auth-icon {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 24px;
             color: white;
             margin: 0 auto 10px;
         }
@@ -117,10 +119,10 @@
         .auth-tabs {
             display: flex;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             background: var(--bg-card);
             padding: 4px;
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
         .auth-tab {
@@ -132,6 +134,7 @@
             font-weight: 600;
             cursor: pointer;
             border-radius: 6px;
+            font-size: 14px;
         }
 
         .auth-tab.active {
@@ -161,15 +164,17 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-secondary);
+            font-size: 14px;
         }
 
         .auth-input {
             width: 100%;
-            padding: 10px 12px 10px 38px;
+            padding: 10px 12px 10px 36px;
             border: 1px solid var(--border);
             border-radius: 8px;
             background: var(--bg-card);
             color: var(--text-primary);
+            font-size: 14px;
         }
 
         .btn {
@@ -185,6 +190,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            font-size: 14px;
         }
 
         .btn-google {
@@ -200,6 +206,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid var(--border);
         }
 
         .header-content {
@@ -228,6 +235,7 @@
             border-radius: 20px;
             background: var(--bg-card);
             color: var(--text-primary);
+            font-size: 13px;
         }
 
         .header-search-icon {
@@ -236,15 +244,16 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-secondary);
+            font-size: 14px;
         }
 
         /* Subscription Banner */
         .sub-banner {
-            background: #2a2000;
+            background: linear-gradient(90deg, #2a2000 0%, #1a1400 100%);
             border: 1px solid var(--gold);
             padding: 10px 15px;
-            margin: 10px 15px 0 15px;
-            border-radius: 8px;
+            margin: 12px 15px 5px 15px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -254,80 +263,32 @@
             color: var(--gold);
             font-size: 13px;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .sub-btn {
             background: var(--gold);
             color: #000;
             border: none;
-            padding: 6px 12px;
+            padding: 6px 14px;
             border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
             font-size: 12px;
         }
 
-        /* Optimized Carousel Area (No gaps) */
-        .carousel-container {
-            height: 250px;
-            position: relative;
-            perspective: 1000px;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-
-        .carousel {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 150px;
-            height: 220px;
-            margin-left: -75px;
-            margin-top: -110px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px var(--shadow);
-            cursor: pointer;
-            transition: all 0.5s ease;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .carousel-item-title {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
-            padding: 15px 8px 8px;
-            color: white;
-            font-size: 12px;
-            text-align: center;
-        }
-
-        /* Genre Filters */
+        /* Genre Filters (Placed directly under banner) */
         .genre-section {
-            padding: 0 15px;
-            margin-top: 5px;
+            padding: 8px 15px 0 15px;
         }
 
         .genre-filters {
             display: flex;
             gap: 8px;
             overflow-x: auto;
-            padding: 5px 0;
+            padding: 4px 0;
             scrollbar-width: none;
         }
 
@@ -356,31 +317,33 @@
         .movies-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 15px;
+            gap: 12px;
+            padding: 12px 15px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .movie-card {
             background: var(--bg-secondary);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             cursor: pointer;
+            border: 1px solid var(--border);
         }
 
         .movie-card img {
             width: 100%;
             aspect-ratio: 2/3;
             object-fit: cover;
+            display: block;
         }
 
         .movie-card-info {
-            padding: 10px;
+            padding: 8px 10px;
         }
 
         .movie-card-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             white-space: nowrap;
             overflow: hidden;
@@ -388,8 +351,9 @@
         }
 
         .movie-card-genre {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-secondary);
+            margin-top: 2px;
         }
 
         /* Bottom Navigation */
@@ -401,7 +365,7 @@
             background: var(--bg-secondary);
             display: flex;
             justify-content: space-around;
-            padding: 10px 0;
+            padding: 8px 0;
             z-index: 100;
             border-top: 1px solid var(--border);
         }
@@ -430,37 +394,99 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.85);
             z-index: 2000;
-            padding: 20px;
+            padding: 15px;
+            overflow-y: auto;
         }
 
         .modal-content {
             background: var(--bg-secondary);
-            max-width: 500px;
-            margin: 30px auto;
-            border-radius: 16px;
-            padding: 20px;
+            max-width: 480px;
+            margin: 20px auto;
+            border-radius: 14px;
+            padding: 18px;
             position: relative;
+            border: 1px solid var(--border);
         }
 
         .modal-close {
             position: absolute;
             top: 10px;
-            right: 10px;
-            background: transparent;
+            right: 12px;
+            background: rgba(255,255,255,0.1);
             border: none;
             color: white;
-            font-size: 20px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 18px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-poster {
             width: 100%;
-            height: 250px;
+            height: 220px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 8px;
+            display: none;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Benefits List in Plan Modal */
+        .benefits-list {
+            text-align: left;
+            margin: 15px 0;
+            background: var(--bg-card);
+            padding: 12px 15px;
+            border-radius: 10px;
+            list-style: none;
+        }
+
+        .benefits-list li {
+            font-size: 13px;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .benefits-list li i {
+            color: var(--green);
+        }
+
+        .benefits-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .btn-play {
+            background: var(--accent);
+            margin-top: 8px;
+        }
+
+        .btn-trailer {
+            background: #333;
+            color: white;
+            margin-top: 8px;
         }
 
         .error-message {
@@ -549,22 +575,18 @@
             <div class="header-content">
                 <div class="logo"><i class="fas fa-film"></i> MovieBox</div>
                 <div class="header-search">
-                    <input type="text" id="search-input" placeholder="Search..." oninput="filterMovies()">
+                    <input type="text" id="search-input" placeholder="Search movies..." oninput="filterMovies()">
                     <i class="fas fa-search header-search-icon"></i>
                 </div>
             </div>
         </header>
 
         <div class="sub-banner">
-            <span class="sub-banner-text" id="sub-bar-text">Plan Status: Free</span>
-            <button class="sub-btn" onclick="openSubModal()">Subscribe ₹20</button>
+            <span class="sub-banner-text" id="sub-bar-text"><i class="fas fa-crown"></i> Plan Status: Free</span>
+            <button class="sub-btn" id="sub-bar-btn" onclick="openSubModal()">Subscribe ₹19</button>
         </div>
 
         <main>
-            <div class="carousel-container" id="carousel-container">
-                <div class="carousel" id="carousel"></div>
-            </div>
-
             <div class="genre-section">
                 <div class="genre-filters" id="genre-filters"></div>
             </div>
@@ -582,17 +604,43 @@
     <div class="subscription-modal" id="subscription-modal">
         <div class="modal-content" style="text-align: center;">
             <button class="modal-close" onclick="closeSubModal()">×</button>
-            <i class="fas fa-crown" style="font-size: 40px; color: var(--gold);"></i>
-            <h2 style="margin: 10px 0;">₹20 / 28 Days Plan</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 15px;">Unlock all movies for 28 days.</p>
-            <button class="btn" style="background: var(--gold); color: black;" onclick="startRazorpayPayment()">Pay Now via Razorpay</button>
+            <i class="fas fa-crown" style="font-size: 38px; color: var(--gold); margin-bottom: 5px;"></i>
+            <h2 style="font-size: 20px;">MovieBox VIP Plan</h2>
+            <h1 style="color: var(--gold); font-size: 32px; margin: 8px 0;">₹19 <span style="font-size: 14px; color: var(--text-secondary);">/ 28 Days</span></h1>
+
+            <ul class="benefits-list">
+                <li><i class="fas fa-check-circle"></i> Unlimited Mobile Watching</li>
+                <li><i class="fas fa-check-circle"></i> Complete 28 Days Full Validity</li>
+                <li><i class="fas fa-check-circle"></i> All HD Movies & Series Unlocked</li>
+                <li><i class="fas fa-check-circle"></i> Fast & Buffer-free Streaming</li>
+            </ul>
+
+            <button class="btn" style="background: var(--gold); color: black; font-weight: bold;" onclick="startRazorpayPayment()">
+                Pay ₹19 via Razorpay
+            </button>
         </div>
     </div>
 
     <div class="modal" id="movie-modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeMovieModal()">×</button>
-            <div id="modal-content-inner"></div>
+            
+            <img src="" class="modal-poster" id="modal-poster">
+            
+            <div class="video-container" id="video-container">
+                <iframe id="video-player-iframe" allowfullscreen></iframe>
+            </div>
+
+            <h2 id="modal-movie-title" style="font-size: 18px;"></h2>
+            <p id="modal-movie-desc" style="color: var(--text-secondary); margin: 8px 0; font-size: 13px;"></p>
+
+            <button class="btn btn-trailer" id="modal-trailer-btn">
+                <i class="fas fa-play-circle"></i> Play Trailer
+            </button>
+            
+            <button class="btn btn-play" id="modal-play-btn">
+                <i class="fas fa-play"></i> Watch Movie
+            </button>
         </div>
     </div>
 
@@ -628,7 +676,7 @@
                 currentUser = user;
                 document.getElementById('auth-screen').style.display = 'none';
                 document.getElementById('app-dashboard').style.display = 'block';
-                checkSubStatus();
+                checkSubscriptionStatusWithExpiry();
                 loadMovies();
             } else {
                 currentUser = null;
@@ -637,15 +685,32 @@
             }
         });
 
-        function checkSubStatus() {
-            database.ref('users/' + currentUser.uid + '/subscription').on('value', (snap) => {
-                const sub = snap.val();
-                if (sub && sub.expiryDate > Date.now()) {
+        // Strict 28 Days Expiry & Auto Reset Check via Firebase Time
+        function checkSubscriptionStatusWithExpiry() {
+            if (!currentUser) return;
+
+            database.ref('users/' + currentUser.uid + '/subscription').on('value', (snapshot) => {
+                const sub = snapshot.val();
+                const now = Date.now();
+
+                if (sub && sub.expiryDate && sub.expiryDate > now) {
                     isSubscribed = true;
-                    document.getElementById('sub-bar-text').textContent = 'VIP Active (28 Days Plan)';
+                    const daysLeft = Math.ceil((sub.expiryDate - now) / (1000 * 60 * 60 * 24));
+                    document.getElementById('sub-bar-text').innerHTML = `<i class="fas fa-crown"></i> VIP Active (${daysLeft} Days left)`;
+                    document.getElementById('sub-bar-btn').textContent = 'Renew ₹19';
                 } else {
+                    // Reset to free status if 28 days completed
                     isSubscribed = false;
-                    document.getElementById('sub-bar-text').textContent = 'Plan Status: Expired / Free';
+                    document.getElementById('sub-bar-text').innerHTML = `<i class="fas fa-crown"></i> Subscription: Expired / Free`;
+                    document.getElementById('sub-bar-btn').textContent = 'Subscribe ₹19';
+
+                    if (sub && sub.expiryDate <= now) {
+                        // Reset expired sub in DB
+                        database.ref('users/' + currentUser.uid + '/subscription').update({
+                            active: false,
+                            expired: true
+                        });
+                    }
                 }
             });
         }
@@ -661,14 +726,11 @@
                     });
                 }
                 filterMovies();
-                setupCarousel();
                 loadGenres();
             });
         }
 
-        /* Fixing Genre Category Click Logic */
         function loadGenres() {
-            // Get unique genres from movie data
             const rawGenres = allMovies.map(m => m.genre).filter(Boolean);
             const genres = ['All', ...new Set(rawGenres)];
 
@@ -703,7 +765,7 @@
             const grid = document.getElementById('movies-grid');
             grid.innerHTML = '';
             if (movies.length === 0) {
-                grid.innerHTML = '<p style="grid-column: 1/-1; text-align:center; color: var(--text-secondary); padding: 20px;">No movies found</p>';
+                grid.innerHTML = '<p style="grid-column: 1/-1; text-align:center; color: var(--text-secondary); padding: 30px;">No movies available</p>';
                 return;
             }
             movies.forEach(movie => {
@@ -721,69 +783,83 @@
             });
         }
 
-        /* 3D Carousel setup */
-        function setupCarousel() {
-            const container = document.getElementById('carousel');
-            container.innerHTML = '';
-            const recent = allMovies.slice(0, 5);
-            recent.forEach((movie, i) => {
-                const item = document.createElement('div');
-                item.className = 'carousel-item';
-                item.style.transform = `translateX(${(i - 2) * 120}px) translateZ(${100 - Math.abs(i - 2) * 50}px)`;
-                item.innerHTML = `
-                    <img src="${movie.poster}">
-                    <div class="carousel-item-title">${movie.title}</div>
-                `;
-                item.onclick = () => openMovieModal(movie);
-                container.appendChild(item);
-            });
-        }
-
         function openMovieModal(movie) {
-            const container = document.getElementById('modal-content-inner');
-            container.innerHTML = `
-                <img src="${movie.poster}" class="modal-poster">
-                <h2>${movie.title}</h2>
-                <p style="color: var(--text-secondary); margin: 8px 0; font-size: 13px;">${movie.description || 'No description available.'}</p>
-                <button class="btn" onclick="playMovie('${movie.playUrl}')">
-                    <i class="fas ${isSubscribed ? 'fa-play' : 'fa-lock'}"></i> ${isSubscribed ? 'Play Now' : 'Pay ₹20 To Play'}
-                </button>
-            `;
-            document.getElementById('movie-modal').style.display = 'block';
-        }
+            const poster = document.getElementById('modal-poster');
+            const videoContainer = document.getElementById('video-container');
+            const iframe = document.getElementById('video-player-iframe');
+            
+            poster.style.display = 'block';
+            videoContainer.style.display = 'none';
+            iframe.src = '';
 
-        function playMovie(url) {
-            if (!isSubscribed) {
-                alert('Please subscribe to watch movies.');
-                openSubModal();
-            } else {
-                window.open(url, '_blank');
-            }
+            document.getElementById('modal-movie-title').textContent = movie.title;
+            document.getElementById('modal-movie-desc').textContent = movie.description || 'No description available.';
+
+            // Trailer Play Handler (Free for all)
+            const trailerBtn = document.getElementById('modal-trailer-btn');
+            trailerBtn.onclick = () => {
+                if (movie.trailerUrl) {
+                    poster.style.display = 'none';
+                    videoContainer.style.display = 'block';
+                    iframe.src = movie.trailerUrl;
+                } else {
+                    alert('Trailer not available for this movie.');
+                }
+            };
+
+            // Full Movie Watch Handler (Subscription Required)
+            const playBtn = document.getElementById('modal-play-btn');
+            playBtn.innerHTML = `<i class="fas ${isSubscribed ? 'fa-play' : 'fa-lock'}"></i> ${isSubscribed ? 'Watch Full Movie' : 'Unlock & Watch (₹19)'}`;
+            
+            playBtn.onclick = () => {
+                if (!isSubscribed) {
+                    alert('Subscription Required! Pay ₹19 to watch full movies for 28 days.');
+                    openSubModal();
+                } else {
+                    if (movie.playUrl) {
+                        poster.style.display = 'none';
+                        videoContainer.style.display = 'block';
+                        iframe.src = movie.playUrl;
+                    } else {
+                        alert('Movie stream link not available.');
+                    }
+                }
+            };
+
+            document.getElementById('movie-modal').style.display = 'block';
         }
 
         function startRazorpayPayment() {
             const options = {
                 "key": RAZORPAY_KEY_ID,
-                "amount": "2000",
+                "amount": "1900", // ₹19 in Paise
                 "currency": "INR",
-                "name": "MovieBox",
-                "description": "28 Days Access",
+                "name": "MovieBox Premium",
+                "description": "28 Days Mobile Access",
                 "handler": function (res) {
-                    const expiry = Date.now() + (28 * 24 * 60 * 60 * 1000);
+                    const expiry = Date.now() + (28 * 24 * 60 * 60 * 1000); // 28 Days Exact
                     database.ref('users/' + currentUser.uid + '/subscription').set({
                         paymentId: res.razorpay_payment_id,
+                        amount: 19,
+                        active: true,
+                        subscribedAt: Date.now(),
                         expiryDate: expiry
                     }).then(() => {
-                        alert("Payment successful!");
+                        alert("Payment Successful! 28 Days Access Activated.");
                         closeSubModal();
                     });
-                }
+                },
+                "prefill": {
+                    "name": currentUser.displayName || "",
+                    "email": currentUser.email || ""
+                },
+                "theme": { "color": "#e50914" }
             };
             const rzp = new Razorpay(options);
             rzp.open();
         }
 
-        /* Navigation Helpers */
+        /* Nav & Helpers */
         function switchTab(t) {
             document.querySelectorAll('.auth-tab').forEach(x => x.classList.remove('active'));
             document.querySelectorAll('.auth-form').forEach(x => x.classList.remove('active'));
@@ -812,7 +888,8 @@
             ).then(cred => {
                 database.ref('users/' + cred.user.uid).set({
                     name: document.getElementById('signup-name').value,
-                    email: cred.user.email
+                    email: cred.user.email,
+                    createdAt: Date.now()
                 });
             }).catch(err => alert(err.message));
         };
@@ -824,7 +901,10 @@
         function logoutUser() { auth.signOut(); }
         function openSubModal() { document.getElementById('subscription-modal').style.display = 'block'; }
         function closeSubModal() { document.getElementById('subscription-modal').style.display = 'none'; }
-        function closeMovieModal() { document.getElementById('movie-modal').style.display = 'none'; }
+        function closeMovieModal() { 
+            document.getElementById('video-player-iframe').src = '';
+            document.getElementById('movie-modal').style.display = 'none'; 
+        }
         function showHome() { selectedGenre = 'All'; filterMovies(); }
     </script>
 </body>
